@@ -1,0 +1,7 @@
+{
+    "/api/flooditapi": {
+        "target": "http://localhost:8080/function/flooditapi",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

@@ -1,0 +1,53 @@
+.container {
+    display: grid;
+    grid-template-areas:
+        "wintext"
+        "board"
+        "palette";
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    width: 42%;
+}
+
+.wintext {
+    grid-area: wintext;
+    font-size: 20pt;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.board {
+    grid-area: board;
+    margin-top: 5px;
+}
+
+.board-cell {
+    max-width: 50px;
+    min-width: 50px;
+}
+
+.palette {
+    grid-area: palette;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.palette-list {
+    margin-top: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20px;
+}
+
+.palette-cell {
+    border-radius: 30px;
+    max-width: 30px;
+    min-width: 30px;
+}
+
+mat-grid-tile {
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
