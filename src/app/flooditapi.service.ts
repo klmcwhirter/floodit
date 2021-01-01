@@ -18,7 +18,7 @@ export class FloodItApiService {
     } as FloodItRequest;
 
     return this.httpClient.put<FloodItRequest>(
-      '/api/flooditapi',
+      '/floodit/api/flooditapi',
       req
     );
   }
@@ -28,7 +28,7 @@ export class FloodItApiService {
     } as FloodItRequest;
 
     return this.httpClient.put<FloodItRequest>(
-      '/api/flooditapi',
+      '/floodit/api/flooditapi',
       req
     );
   }

@@ -44,6 +44,7 @@
     border-radius: 30px;
     max-width: 30px;
     min-width: 30px;
+    cursor: pointer;
 }
 
 mat-grid-tile {
