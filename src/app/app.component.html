@@ -9,15 +9,18 @@
 
     <div class="wintext">
         {{request.state.win_text}}
-        <span class="spacer"></span>
-        <button (click)="reset()">Reset</button>
     </div>
 
-    <mat-grid-list cols="{{boardSize}}" rowHeight="50px">
-        <ng-container *ngFor="let row of board; index as y">
-            <mat-grid-tile class="board-cell" [style.background-color]="color" *ngFor="let color of row; index as x">
-                &nbsp;
-            </mat-grid-tile>
-        </ng-container>
-    </mat-grid-list>
+    <div class="board">
+        <mat-grid-list cols="{{boardSize}}" rowHeight="50px">
+            <ng-container *ngFor="let row of board; index as y">
+                <mat-grid-tile class="board-cell" [style.background-color]="color"
+                    *ngFor="let color of row; index as x">
+                    &nbsp;
+                </mat-grid-tile>
+            </ng-container>
+        </mat-grid-list>
+
+        <button (click)="reset()">Reset</button>
+    </div>
 </div>
