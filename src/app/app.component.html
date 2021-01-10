@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="wintext"> {{request.state.win_text}}</div>
+    <div class="wintext"> {{request.state.win_text}} <button (click)="reset()">Reset</button></div>
 
     <mat-grid-list cols="{{boardSize}}" rowHeight="50px">
         <ng-container *ngFor="let row of board; index as y">
@@ -15,6 +15,5 @@
                 *ngFor="let color of colors; index as idx" (click)="select_color(idx)">&nbsp;
             </mat-grid-tile>
         </mat-grid-list>
-        <button (click)="reset()">Reset</button>
     </div>
 </div>

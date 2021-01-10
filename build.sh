@@ -27,7 +27,7 @@ function makeConfigMap
     echocmd popd
 }
 
-echocmd kubectl delete -f k8s/namespace.yml
+echocmd kubectl delete -f k8s/namespace.yml &
 
 echocmd npm run build
 
