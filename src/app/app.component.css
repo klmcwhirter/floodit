@@ -1,9 +1,9 @@
 .container {
     display: grid;
     grid-template-areas:
+        "palette"
         "wintext"
-        "board"
-        "palette";
+        "board";
     margin-left: auto;
     margin-right: auto;
     align-content: center;
