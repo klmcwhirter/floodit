@@ -1,3 +1,5 @@
+<div class="reset"><button (click)="reset()">Restart Game</button></div>
+
 <div class="container">
     <div class="palette">
         <mat-grid-list class="palette-list" cols="{{colors.length}}" rowHeight="30px">
@@ -6,8 +8,6 @@
             </mat-grid-tile>
         </mat-grid-list>
     </div>
-
-    <div class="reset"><button (click)="reset()">Reset</button></div>
 
     <div class="wintext">
         {{request.state.win_text}}
