@@ -9,6 +9,10 @@
 
     <div class="wintext">
         {{request.state.win_text}}
+
+        <div class="spacer"></div>
+
+        <button (click)="reset()">Reset</button>
     </div>
 
     <div class="board">
@@ -20,9 +24,5 @@
                 </mat-grid-tile>
             </ng-container>
         </mat-grid-list>
-    </div>
-
-    <div class="reset">
-        <button (click)="reset()">Reset</button>
     </div>
 </div>
