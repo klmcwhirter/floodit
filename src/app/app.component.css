@@ -35,7 +35,8 @@
 
 .reset {
     grid-area: reset;
-    margin-top: 5px;
+    margin-top: 10px;
+    text-align: center;
 }
 
 .palette {

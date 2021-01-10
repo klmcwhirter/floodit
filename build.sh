@@ -20,7 +20,8 @@ function makeConfigMap
         files="${files} --from-file=$f"
     done
 
-    echocmd kubectl delete -n ${namespace} configmap ${configMapName}
+    # namespace was deleted earlier
+    # echocmd kubectl delete -n ${namespace} configmap ${configMapName}
 
     echocmd kubectl create -n ${namespace} configmap ${configMapName} ${files}
 
@@ -48,6 +49,10 @@ echocmd rm -fr build/etc/nginx/conf.d
 echocmd cp -r etc build
 
 echocmd makeConfigMap floodit floodit-nginx-config build/etc/nginx
+
+# clean up
+echocmd rm -fr build
+echocmd rm -fr dist
 
 echocmd kubectl apply -f k8s/deployment.yml
 
