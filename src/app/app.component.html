@@ -7,12 +7,10 @@
         </mat-grid-list>
     </div>
 
+    <div class="reset"><button (click)="reset()">Reset</button></div>
+
     <div class="wintext">
         {{request.state.win_text}}
-
-        <span class="spacer"></span>
-
-        <button (click)="reset()">Reset</button>
     </div>
 
     <div class="board">
