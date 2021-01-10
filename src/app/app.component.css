@@ -10,6 +10,11 @@
     width: 42%;
 }
 
+.spacer {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .wintext {
     grid-area: wintext;
     font-size: 20pt;

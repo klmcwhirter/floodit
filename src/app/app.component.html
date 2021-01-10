@@ -1,5 +1,7 @@
 <div class="container">
-    <div class="wintext"> {{request.state.win_text}} <button (click)="reset()">Reset</button></div>
+    <div class="wintext"> {{request.state.win_text}}</div>
+    <div class="spacer"></div>
+    <button (click)="reset()">Reset</button>
 
     <mat-grid-list cols="{{boardSize}}" rowHeight="50px">
         <ng-container *ngFor="let row of board; index as y">
