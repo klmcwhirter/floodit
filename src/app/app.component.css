@@ -1,18 +1,33 @@
 .container {
     display: grid;
     grid-template-areas:
-        "palette"
-        "wintext"
-        "board";
+        "empty palette palette palette palette"
+        "reset wintext wintext wintext wintext"
+        "reset board   board   board   board";
     margin-left: auto;
     margin-right: auto;
     align-content: center;
-    width: 42%;
+    width: 60%;
 }
 
 .spacer {
     margin-left: 0;
     margin-right: 0;
+}
+
+.empty {
+    grid-area: empty;
+}
+
+.reset {
+    grid-area: reset;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.reset > li {
+    list-style: none;
+    margin-top: 10px;
 }
 
 .wintext {
@@ -28,8 +43,12 @@
 }
 
 .board-cell {
+    height: 50px;
+    max-height: 50px;
+    min-height: 50px;
     max-width: 50px;
     min-width: 50px;
+    width: 50px;
 }
 
 .palette {

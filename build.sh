@@ -28,7 +28,7 @@ function makeConfigMap
     echocmd popd
 }
 
-echocmd kubectl delete -f k8s/namespace.yml &
+echocmd kubectl delete -f k8s/namespace.yml
 
 echocmd npm run build
 
@@ -39,10 +39,15 @@ echocmd makeConfigMap floodit floodit-artifacts dist/floodit
 echocmd rm -fr build
 echocmd mkdir -p build/etc/nginx
 
-# copy default config
-echocmd docker run -d --name nginx nginx:alpine
-echocmd docker cp nginx:/etc/nginx build/etc
-echocmd docker stop nginx && docker rm -v nginx
+if [ ! -f etc-default/nginx/nginx.conf ]
+then
+    # copy default config
+    echocmd docker run -d --name nginx nginx:alpine
+    echocmd docker cp nginx:/etc/nginx build/etc
+    echocmd docker stop nginx && docker rm -v nginx
+else
+    echocmd cp -r etc-default/nginx build/etc
+fi
 
 # overwrite with local config
 echocmd rm -fr build/etc/nginx/conf.d

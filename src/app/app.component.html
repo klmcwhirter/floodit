@@ -1,6 +1,18 @@
-<div class="reset"><button (click)="reset()">Restart Game</button></div>
 
 <div class="container">
+    <ul class="reset">
+        <li>
+            <button mat-icon-button (click)="reset(true)" aria-label="New game">
+                <mat-icon color="primary">fiber_new</mat-icon>
+            </button>
+        </li>
+        <li>
+            <button mat-icon-button color="primary" (click)="reset(false)" aria-label="Restart current game">
+                <mat-icon color="primary">history</mat-icon>
+            </button>
+        </li>
+    </ul>
+
     <div class="palette">
         <mat-grid-list class="palette-list" cols="{{colors.length}}" rowHeight="30px">
             <mat-grid-tile class="palette-cell" [style.background-color]="color"
@@ -15,9 +27,8 @@
 
     <div class="board">
         <mat-grid-list cols="{{boardSize}}" rowHeight="50px">
-            <ng-container *ngFor="let row of board; index as y">
-                <mat-grid-tile class="board-cell" [style.background-color]="color"
-                    *ngFor="let color of row; index as x">
+            <ng-container *ngFor="let row of board">
+                <mat-grid-tile class="board-cell" [style.background-color]="color" *ngFor="let color of row">
                     &nbsp;
                 </mat-grid-tile>
             </ng-container>

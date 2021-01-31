@@ -10,12 +10,16 @@ export class FloodItApiService {
 
   constructor(private httpClient: HttpClient) { }
 
-  color(idx: number, state: FloodItState): Observable<FloodItRequest> {
-    const req = {
-      '__type__': 'req',
+  color(verbose: boolean, idx: number, state: FloodItState): Observable<FloodItRequest> {
+    const model = {
+      __type__: 'color',
       color: idx,
-      state: state
+      state: state,
+      verbose: verbose
     } as FloodItRequest;
+    const req = new FloodItRequest(verbose, model);
+
+    console.debug('FloodItApiService.color: req=', req);
 
     return this.httpClient.put<FloodItRequest>(
       '/floodit/api/flooditapi',
@@ -23,9 +27,13 @@ export class FloodItApiService {
     );
   }
 
-  reset(): Observable<FloodItRequest> {
+  reset(verbose: boolean): Observable<FloodItRequest> {
     const req = {
-    } as FloodItRequest;
+      '__type__': 'reset',
+      verbose: verbose
+    };
+
+    console.debug('FloodItApiService.reset: req=', req);
 
     return this.httpClient.put<FloodItRequest>(
       '/floodit/api/flooditapi',
